@@ -15,6 +15,7 @@
 			$this->id=NULL;
 			$this->name_subject=NULL;
 			$this->time_subject=NULL;
+			$this->day_subject=NULL;
 			$this->room_subject=NULL;
 			$this->id_user=NULL;
 			$this->permission=NULL;
@@ -30,6 +31,9 @@
 		public function setTime_subject($value){
 			$this->time_subject=$value;
 		}
+		public function setDay_subject($value){
+			$this->day_subject=$value;
+		}		
 		public function setRoom_subject($value){
 			$this->room_subject=$value;
 		}
@@ -53,6 +57,9 @@
 		public function getTime_subject(){
 			return $this->time_subject;
 		}
+		public function getDay_subject(){
+			return $this->day_subject;
+		}
 		public function getRoom_subject(){
 			return $this->room_subject;
 		}
@@ -66,16 +73,17 @@
 			return $this->path_file;
 		}
 
-		public function newSubjects(){
-			$new=new SubjectsRepository;
-			$new->id=$this->id;
-			$new->name_subject=$this->name_subject;
-			$new->time_subject=$this->time_subject;
-			$new->room_subject=$this->room_subject;
-			$new->id_user=$this->id_user;
-			$new->permission=$this->permission;
-			$new->path_file=$this->path_file;
-			$new->save();
+
+		public function checkPermission($id){
+
+
+
+		}
+
+		public function countStudent(){
+
+
+
 		}
 
 		public static function getFromId($id){

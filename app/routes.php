@@ -45,7 +45,7 @@ Route::get('/logout',function()
 
 
 
-Route::post('/register','RegisterController@Register');
+Route::post('/register','UsesController@regisUser');
 
 Route::get('/test', function() {
 	return View::make('test2');
@@ -55,6 +55,7 @@ Route::get('/editprofile', function() {
 	return View::make('usersetting');
 });
 
+Route::post('/newclass','SubjectsController@addSubject');
 
 Route::get('/subject', function() {
 	return View::make('subject');
@@ -67,7 +68,9 @@ Route::get('/deletesubject', function() {
 Route::get('/createclass', function() {
 	return View::make('newclass');
 });
-
+/*
+Route::post('/')
+*/
 Route::get('/editclass', function() {
 	return View::make('editSub');
 });
