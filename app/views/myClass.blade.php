@@ -1,4 +1,4 @@
-@extends('test')
+@extends('template')
 
 @section('content')
 <div style="margin-left:15px; margin-top:10px;">

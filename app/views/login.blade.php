@@ -17,11 +17,11 @@
 		</div> 
     		<form class="form col-md-12 center-block" method="POST" action="{{url('/ac_login')}}">
 				<div class="form-group">
-					<input type="text" name="id" class="form-control input-lg" placeholder="YourID" required autofocus>
+					<input type="text" id="id" name="id" class="form-control input-lg" placeholder="YourID" required autofocus>
         		</div>
 
        			 <div class="form-group">
-					<input type="password" name="password" class="form-control input-lg" placeholder="Password" required autofocus>
+					<input type="password" id="password" name="password" class="form-control input-lg" placeholder="Password" required autofocus>
        			 </div>
 		
 				<div class="form-group">

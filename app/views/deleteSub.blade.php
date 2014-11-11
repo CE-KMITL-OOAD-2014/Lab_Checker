@@ -1,4 +1,4 @@
-@extends('test')
+@extends('template')
 
 @section('content')
 
@@ -8,6 +8,19 @@
 		<div class="row" >
 	<div class="alert alert-danger col-md-12" role="alert">กรุณาเลือกรายวิชาที่คุณต้องการลบ</div>
 </div>
+<!--pop up-->
+<script>
+function myFunction(obj) {
+    var x;
+    if (confirm("คุณต้องการลบหรือไม่") == true) {
+        removeRow(obj);
+    } 
+    else {
+ 
+    }
+
+}
+</script>
 
 <!--code delete-->
 <script type="text/javascript">
@@ -18,6 +31,8 @@ function removeRow(obj) {
     theRowParent.remove(theRow);
 }
 </script>
+
+
 
 
 
@@ -42,49 +57,49 @@ function removeRow(obj) {
 								          <td><p align="center">OOAD</p></td>
 								          <td><p align="center">10</p></td>
 								          <td><p align="center"><font color="#36a550">อัพรายชื่อแล้ว</font></p></td>
-								          <td><div class="checkbox"><center><button value="" class="btn btn-danger"  onclick="removeRow(this)">Delete</button></center><div>
+								          <td><div class="checkbox"><center><button value="" class="btn btn-danger"  onclick="myFunction(this)">Delete</button></center><div>
 								        </tr>
 								        <tr>
 								          <td><p align="center">2</p></td>
 								          <td><p align="center">SE</p></td>
 								          <td><p align="center">20</p></td>
 								          <td><p align="center"><font color="#fd4242">ยังไม่อัพรายชื่อ</font></p></td>
-								          <td><div class="checkbox"><center><button  class="btn btn-danger" onclick="removeRow(this)" >Delete</button></center><div>
+								          <td><div class="checkbox"><center><button  class="btn btn-danger" onclick="myFunction(this)" >Delete</button></center><div>
 								        </tr>
 								        <tr class="success">
 								          <td><p align="center">3</p></td>
 								          <td><p align="center">Column content</p></td>
 								          <td><p align="center">Column content</p></td>
 								          <td><p align="center">Column content</p></td>
-								         <td><div class="checkbox"><center><button  class="btn btn-danger" onclick="removeRow(this)">Delete</button></center><div>
+								         <td><div class="checkbox"><center><button  class="btn btn-danger" onclick="myFunction(this)">Delete</button></center><div>
 								        </tr>
 								        <tr>
 								          <td><p align="center">4</p></td>
 								          <td><p align="center">Column content</p></td>
 								          <td><p align="center">Column content</p></td>
 								          <td><p align="center">Column content</p></td>
-								         <td><div class="checkbox"><center><button  class="btn btn-danger" onclick="removeRow(this)">Delete</button></center><div>
+								         <td><div class="checkbox"><center><button  class="btn btn-danger" onclick="myFunction(this)">Delete</button></center><div>
 								        </tr>
 								        <tr class="info">
 								          <td><p align="center">5</p></td>
 								          <td><p align="center">Column content</p></td>
 								          <td><p align="center">Column content</p></td>
 								          <td><p align="center">Column content</p></td>
-								          <td><div class="checkbox"><center><button  class="btn btn-danger" onclick="removeRow(this)" >Delete</button></center><div>
+								          <td><div class="checkbox"><center><button  class="btn btn-danger" onclick="myFunction(this)" >Delete</button></center><div>
 								        </tr>
 								        <tr>
 								          <td><p align="center">6</p></td>
 								          <td><p align="center">Column content</p></td>
 								          <td><p align="center">Column content</p></td>
 								          <td><p align="center">Column content</p></td>
-								        <td><div class="checkbox"><center><button  class="btn btn-danger" onclick="removeRow(this)">Delete</button></center><div>
+								        <td><div class="checkbox"><center><button  class="btn btn-danger" onclick="myFunction(this)">Delete</button></center><div>
 								        </tr>
 								        <tr class="warning">
 								          <td><p align="center">7</p></td>
 								          <td><p align="center">Column content</p></td>
 								          <td><p align="center">Column content</p></td>
 								          <td><p align="center">Column content</p></td>
-								         <td><div class="checkbox"><center><button  class="btn btn-danger" onclick="removeRow(this)"  >Delete</button></center><div>
+								         <td><div class="checkbox"><center><button  class="btn btn-danger" onclick="myFunction(this)"  >Delete</button></center><div>
 								        </tr>
 								 
 								       

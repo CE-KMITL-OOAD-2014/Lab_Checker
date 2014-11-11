@@ -1,4 +1,4 @@
-@extends('test')
+@extends('template')
 
 @section('content')
 
@@ -38,14 +38,14 @@
                     <label  class="col-lg-2 control-label">วันที่เรียน</label>
                     <div class="col-lg-10">
                       <select class="form-control" name="day_subject" id="day_subject">
-						  <option value= 'monday' >จันทร์</option>
-						  <option value= 'tuesday' >อังคาร</option>
-						  <option value= 'wednesday' >พุธ</option>
-						  <option value= 'thursday' >พฤหัสบดี</option>
-						  <option value= 'friday' >ศุกร์</option>
-              <option value= 'saturday' >เสาร์</option>
-              <option value= 'sunday' >อาทิตย์</option>             
-					  </select>
+						            <option value= "monday" >จันทร์</option>
+						            <option value= "tuesday" >อังคาร</option>
+						            <option value= "wednesday" >พุธ</option>
+						            <option value= "thursday" >พฤหัสบดี</option>
+						            <option value= "friday" >ศุกร์</option>
+                        <option value= "saturday" >เสาร์</option>
+                        <option value= "sunday" >อาทิตย์</option>             
+					  <        </select>
                     </div>
                   </div>
 

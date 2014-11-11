@@ -12,14 +12,14 @@
 			$this->id_user=NULL;
 		}
 
-		public function setId_topic($value){
-			$this->id=$value;
+		public function setId_topic($id){
+			$this->id=$id;
 		}
-		public function setTopic($value){
-			$this->topic=$value;
+		public function setTopic($topic){
+			$this->topic=$topic;
 		}
-		public function setId_user($value){
-			$this->id_user=$value;
+		public function setId_user($id_user){
+			$this->id_user=$id_user;
 		}
 
 		public function getId_topic(){
@@ -32,7 +32,7 @@
 			return $this->id_user;
 		}
 
-		public function newUsers(){
+		public function newAnnoun(){
 			$new=new AnnouncementsRepository;
 			$new->id=$this->id;
 			$new->topic=$this->topic;
@@ -52,7 +52,7 @@
 			return $obj;
 		}
 
-		public function editUsers($id){
+		public function editAnnoun($id){
 			$edit=AnnouncementsRepository::find($id);
 				if($edit==NULL){
 					return NULL;

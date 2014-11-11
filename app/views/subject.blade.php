@@ -1,13 +1,12 @@
-@extends('test')
-
+@extends('template')
 @section('content')
 
 	
 	<!--table-->
 	<div class="col-md-8 col-md-offset-1" style="margin-top:20px;">
-		<div><button type="button" class="btn btn-success" href="#">New Class</button>
-			 <button type="button" class="btn btn-warning" href="#">Edit Class</button>
-			 <button type="button" class="btn btn-danger" href="#">Delete</button>
+		<div><a type="button" class="btn btn-success" href="/newClass" >New Class</a>
+			 <a type="button" class="btn btn-warning" href="/editclass">Edit Class</a>
+			 <a type="button" class="btn btn-danger" href="/deletesubject">Delete</a>
 		</div>
 		<br>
 				   <div class="panel panel-default">

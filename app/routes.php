@@ -13,51 +13,43 @@
 
 Route::get('/',function()
 {
-	if(Session::get('user',NULL)==NULL){
-		return View::make('login');
-	}else{
+	if(Auth::check()){
 		return Redirect::to('/index');
-	}
-
-});
-
-Route::post('/ac_login',function()
-{
-	$id=Input::get('id');
-	$pass=md5(Input::get('password'));
-	$user_tmp = Users::chkLogin($id,$pass);
-	if($user_tmp!=NULL){
-		Session::push('uses',$user_tmp);
-		return  Session::get('user',NULL);
 	}else{
-		return View::make('login');	
+		return View::make('login');
 	}
 
-//	return  Session::get('user',NULL); // Redirect::to('/');
+});
+/*
+Route::get('/home',function(){
+	return 	Redirect::to('/');
+});
+*/
+Route::post('/ac_login','UserController@login');
+
+Route::get('/usersetting', function() {
+	return View::make('edituser');
 });
 
-Route::get('/logout',function()
-{
-	Session::flush();
-	return Redirect::to('/');
-
-});
+Route::get('/user/logout','UserController@logout');
 
 
 
-Route::post('/register','UsesController@regisUser');
+Route::post('/register','UserController@regisUser');
 
-Route::get('/test', function() {
-	return View::make('test2');
+Route::get('/index', function() {
+	return View::make('index');
 });
 
 Route::get('/editprofile', function() {
 	return View::make('usersetting');
 });
 
-Route::post('/newclass','SubjectsController@addSubject');
+//  Subject
 
-Route::get('/subject', function() {
+Route::post('/newclass','SubjectController@addSubject');
+
+Route::get('/class',function() {
 	return View::make('subject');
 });
 
@@ -65,7 +57,11 @@ Route::get('/deletesubject', function() {
 	return View::make('deleteSub');
 });
 
-Route::get('/createclass', function() {
+Route::get('/subject/newClass', function() {
+	return View::make('newclass');
+});
+
+Route::get('/newClass', function() {
 	return View::make('newclass');
 });
 /*
@@ -78,3 +74,4 @@ Route::get('/editclass', function() {
 Route::get('/myClass', function() {
 	return View::make('myClass');
 });
+
