@@ -1,21 +1,14 @@
 @extends('template')
 
 @section('content')
-<!--head-->
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap-theme.css">
-  <script src = "/js/bootstrap.js"></script>
-  <script src = "/js/jquery.min.js"></script>
-  <link href="/css/simple-sidebar.css" rel="stylesheet">
-
-  <!--end head-->
 
 <div style="margin-left:15px; margin-top:10px;">
 <ul class="nav nav-tabs" role="tablist" id="myTab">
   <li class="active"><a href="#detail" role="tab" data-toggle="tab">รายละเอียดรายวิชา</a></li>
+  <li><a href="#report" role="tab" data-toggle="tab">รายงานผล</a></li>
   <li><a href="#check" role="tab" data-toggle="tab">เช็คชื่อ</a></li>
   <li><a href="#export" role="tab" data-toggle="tab">Export</a></li>
-  <li><a href="#report" role="tab" data-toggle="tab">รายงานผล</a></li>
+  
 
 </ul>
 
@@ -41,9 +34,139 @@
   </div>
 
 
-  <div class="tab-pane active" id="check">
+  <div class="tab-pane" id="check">
     <div stlye="margin-left:20px; margin-top:20px;">
-     <p> 55555555</p>
+         <div class="table-responsive margin-top:20px; col-md-10">
+          <br>
+                    <table class="table table-bordered table-striped table table-hover">
+                      <thead>
+
+                                  <tr>
+                                      <th><center>data com</center></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+
+                                    <th name="order"><p align="center">#</p></th>
+                                    <th name="namesubject"><p align="center">Lab 1</p></th>
+                                    <th name="nstudent"><p align="center">Lab 2</p></th>
+                                    <th name="statusUp"><p align="center">Lab 3</p></th>
+                                    <th name="statusUp"><p align="center">Lab 4</p></th>
+                                    <th name="statusUp"><p align="center">Lab 5</p></th>
+                                    <th name="statusUp"><p align="center">Lab 6</p></th>
+                                    <th name="statusUp"><p align="center">Lab 7</p></th>
+                                  
+                                </tr>
+                                </thead>
+                                <tbody>
+                                  <tr >
+                                    <td><p align="center">1</p></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                   
+                                  </tr>
+                                  <tr>
+                                    <td><p align="center">2</p></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                   
+                                  </tr>
+                                  <tr >
+                                    <td><p align="center">3</p></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    
+                                  </tr>
+                                  <tr>
+                                    <td><p align="center">4</p></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                   
+                                  </tr>
+                                  <tr>
+                                    <td><p align="center">5</p></td>
+                                   <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    
+                                  </tr>
+                                  <tr>
+                                    <td><p align="center">6</p></td>
+                                     <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                   
+                                  </tr>
+                                  <tr>
+                                    <td><p align="center">7</p></td>
+                                     <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    
+                                  </tr>
+                                  <tr>
+                                    <td><p align="center">8</p></td>
+                                     <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                   
+                                  </tr>
+                                  <tr>
+                                    <td><p align="center">9</p></td>
+                                     <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    <td><center><input type="checkbox"></center></td>
+                                    
+                                  </tr>
+                                </tbody>
+                   </table>
+      </div>
     </div>
   </div>
 

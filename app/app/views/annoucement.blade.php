@@ -1,8 +1,9 @@
 @extends('template')
 
 @section('content')
+
 <div style="margin-left:15px; margin-top:10px;">
-  <h1>กระทู้ถาม - ตอบ และ ข่าวประกาศ</h1>
+  <h1>กระทู้ถาม - ตอบ และ ข่าวประกาศ </h1>
   <br>
 <ul class="nav nav-tabs" role="tablist" id="board">
   <li class="active"><a href="#topic" role="tab" data-toggle="tab">กระทู้</a></li>

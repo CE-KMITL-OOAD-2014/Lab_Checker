@@ -1,14 +1,7 @@
 @extends('template')
 
 @section('content')
-<!--head-->
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap-theme.css">
-  <script src = "/js/bootstrap.js"></script>
-  <script src = "/js/jquery.min.js"></script>
-  <link href="/css/simple-sidebar.css" rel="stylesheet">
 
-  <!--end head-->
 
   	<div class="breadcrumb"><li><p style="font-size: 20px;">Create Subject</li></div>
   	<div class="alert alert-success col-md-8" role="alert" style="margin-left:20px;">กรุณากรอกรายละเอียดวิชาให้ครบด้วยค่ะ</div>
