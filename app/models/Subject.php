@@ -7,6 +7,8 @@
 		private $room_subject;
 		private $id_user;
 		private $permission;
+		private $detail_subject;
+		private $numStundent;
 		private $path_file;
 
 	
@@ -19,6 +21,7 @@
 			$this->room_subject=NULL;
 			$this->id_user=NULL;
 			$this->permission=NULL;
+			$this->numStundent=NULL;
 			$this->detail_subject=NULL;
 			$this->path_file=NULL;
 		}
@@ -43,6 +46,9 @@
 		}
 		public function setPermission($value){
 			$this->permission=$value;
+		}
+		public function setNumstudent($value){
+			$this->numStundent=$value;
 		}
 		public function setDetail_subject($value){
 			 $this->detail_subject=$value;
@@ -76,6 +82,9 @@
 		public function getPermission(){
 			return $this->permission;
 		}
+		public function getNumstudent(){
+			return $this->numStundent;
+		}
 		public function getPath_file(){
 			return $this->path_file;
 		}
@@ -88,7 +97,9 @@
 			$new->room_subject=$this->room_subject;
 			$new->id_user=$this->id_user;
 			$new->permission=$this->permission;
+			$new->numStundent=$this->numStundent;
 			$new->day_subject=$this->day_subject;
+			$new->detail_subject=$this->detail_subject;
 			$new->path_file=$this->path_file;
 			$new->save();
 		}
@@ -114,9 +125,12 @@
 			$obj->id=$datatmp->id;
 			$obj->name_subject=$datatmp->name_subject;
 			$obj->time_subject=$datatmp->time_subject;
+			$obj->day_subject=$datatmp->day_subject;
 			$obj->room_subject=$datatmp->room_subject;
 			$obj->id_user=$datatmp->id_user;
 			$obj->permission=$datatmp->permission;
+			$obj->numStundent=$datatmp->numStundent;
+			$obj->detail_subject=$datatmp->detail_subject;
 			$obj->path_file=$datatmp->path_file;
 			return $obj;
 		}
@@ -125,7 +139,7 @@
 			$data=SubjectRepository::all();
 			$size=count($data);
 
-			$subject = array();
+			$subject = array( );
 			for($i=0;$i<$size;$i++){
 				$obj = new Subject;
 				$obj->id=$data[$i]->id;
@@ -134,8 +148,9 @@
 				$obj->room_subject=$data[$i]->room_subject;
 				$obj->id_user=$data[$i]->id_user;
 				$obj->permission=$data[$i]->permission;
+				$obj->numStundent=$data[$i]->numStundent;
 				$obj->path_file=$data[$i]->path_file;
-				$subject[$i] = $odj;
+				$subject[$i] = $obj;
 			}
 			return $subject;
 		}
@@ -147,6 +162,7 @@
 			$edit->room_subject=$this->room_subject;
 			$edit->id_user=$this->id_user;
 			$edit->permission=$this->permission;
+			$edit->numStundent=$this->numStundent;
 			$edit->path_file=$this->path_file;
 			$edit->save();
 		}

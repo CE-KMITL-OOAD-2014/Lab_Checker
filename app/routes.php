@@ -37,9 +37,9 @@ Route::get('/user/logout','UserController@logout');
 
 Route::post('/register','UserController@regisUser');
 
-Route::get('/index', function() {
-	return View::make('index');
-});
+Route::get('/subject/{id}','SubjectController@getshowsubject');
+
+Route::get('/index','SubjectController@getallsubject');
 
 Route::get('/editprofile', function() {
 	return View::make('usersetting');
@@ -75,3 +75,18 @@ Route::get('/myClass', function() {
 	return View::make('myClass');
 });
 
+Route::get('/myClassStu', function() {
+	return View::make('myClassstudent');
+});
+
+Route::get('/annoucement', function() {
+	return View::make('annoucement');
+});
+
+Route::get('/newtopic', function() {
+	return View::make('newtopic');
+});
+
+Route::get('/topic', function() {
+	return View::make('topic');
+});

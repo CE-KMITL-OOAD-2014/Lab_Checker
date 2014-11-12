@@ -59,9 +59,9 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="inputPassword" class="col-lg-2 control-label">รายละเอียดรายวิชา</label>
+                    <label for="inputPassword" class="col-lg-2 control-label" >รายละเอียดรายวิชา</label>
                     <div class="col-lg-10">
-                     <textarea rows="5" cols="50" ></textarea>
+                     <textarea rows="5" cols="50" form="addsubject" name="detail_subject" id="detail_subject" ></textarea>
                     </div>
                   </div>
 

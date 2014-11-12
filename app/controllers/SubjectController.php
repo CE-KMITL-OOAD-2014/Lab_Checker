@@ -31,7 +31,7 @@
 						$r++;
 					}
 				}
-			fclose($file_handle);
+				fclose($file_handle);
 			$str = "";
 
  			$str = implode(",",$arr);
@@ -43,11 +43,12 @@
 			$subjects->setRoom_subject(Input::get('room_subject'));
 			$subjects->setId_user(Auth::id());
 			$subjects->setPermission($str);
-			$subjects->setDetail_subject(Input::get('detail_subject');
+			$subjects->setNumstudent($i-1);
+			$subjects->setDetail_subject(Input::get('detail_subject'));
 			$subjects->setPath_file($filename);
 			$subjects->newSubject();
 
-			return Redirect::to('/myClass');
+			return Redirect::to('/index');
 			}else{
 				echo "upload fail";
 			}	
@@ -57,23 +58,22 @@
 		{		$obj=new Subject;
 				$show=$obj->getFromId($id);
 				
-			return View::make('showSubject')->with(array("id"=>$show->getId_subject(),
-				"name_subject"=>$show->getName_subject(),"time_subject"=>$show->getTime_subject(),
-				"day_subject"=>$show->getDay_subject(),"room_subject"=>$show->getRoom_subject(),
-				"detail_subject"=>$show->getDetail_subject()));
+			return View::make('showSubject')->with(array("id"=>$show->getId_subject(),"name_subject"=>$show->getName_subject(),"time_subject"=>$show->getTime_subject(),"day_subject"=>$show->getDay_subject(),"room_subject"=>$show->getRoom_subject(),"detail_subject"=>$show->getDetail_subject()));
 		}
 
-		public function getallrecipe()
+		public function getallsubject()
 		{		$obj1=new Subject;
 				$subject=$obj1->getAll();
-			return View::make('allSubject')->with("subject",$subject);
+			return View::make('index')->with("subject",$subject);
 		}
 
-		public function geteditrecipe($id)
-		{		$obj=new Recipe;
-				$recipe=$obj->getById($id);
-			return View::make('recipe.editRecipe')->with(array("name"=>$recipe->getName(),
-				"ingredient"=>$recipe->getIngredient(),"capacity"=>$recipe->getCapacity(),"step"=>$recipe->getStep()));
+		public function geteditsubject($id)
+		{		$obj=new Subject;
+				$subject=$obj->getFromId($id);
+
+			return View::make('subject.subjecy')->with(array("name_subject"=>$show->getName_subject(),"time_subject"=>$show->getTime_subject(),
+				"day_subject"=>$show->getDay_subject(),"room_subject"=>$show->getRoom_subject(),
+				"detail_subject"=>$show->getDetail_subject()));
 		}
 	
 		public function find($id){
@@ -107,9 +107,7 @@
 			$b = 4;
 			$checkTrue = NULL;
 			foreach ($checkPer->permission as $check) {
-				substr($check,$i,$b)
-				$i = $i+5;
-				$b = $b+5;
+				substr($check,$i+5,$b+5);
 				if($id_user == $check){
 					$checkTrue = $check;
 				}	
@@ -121,6 +119,7 @@
 			}
 
 		}
+	
 		// public function destroy($id)
 		// {
 		// 	$del_product = new SubjectsRepository::find($id);

@@ -57,7 +57,7 @@
                     <a href="/class"><span class="glyphicon glyphicon-star"></span>  ชั้นเรียน</a>
                 </li>
                 <li>
-                    <a href="#"><span class="glyphicon glyphicon-bullhorn"></span>      บอร์ดถาม-ตอบ</a>
+                    <a href="/annoucement"><span class="glyphicon glyphicon-bullhorn"></span>   บอร์ดถาม-ตอบ</a>
                 </li>
             </ul>
         </div>
@@ -79,5 +79,16 @@
 <!--    <div class="container">-->
             @yield('content')
         </div>
+        <footer class="text-center">
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright © Your Website 2014
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     </body>
 </html>
