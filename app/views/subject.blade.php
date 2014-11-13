@@ -1,6 +1,7 @@
 @extends('template')
 @section('content')
 
+
 	
 	<!--table-->
 	<div class="col-md-8 col-md-offset-1" style="margin-top:20px;">

@@ -2,6 +2,7 @@
 
 @section('content')
 
+
   	<div class="breadcrumb"><li><p style="font-size: 20px;">Create Subject</li></div>
   	<div class="alert alert-success col-md-8" role="alert" style="margin-left:20px;">กรุณากรอกรายละเอียดวิชาให้ครบด้วยค่ะ</div>
 
@@ -45,7 +46,7 @@
 						            <option value= "friday" >ศุกร์</option>
                         <option value= "saturday" >เสาร์</option>
                         <option value= "sunday" >อาทิตย์</option>             
-					  <        </select>
+					          </select>
                     </div>
                   </div>
 

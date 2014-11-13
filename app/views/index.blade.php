@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <div>
 <br>
 <div class="row" style="margin-left:15px;">
@@ -42,7 +43,7 @@
 		<!--topic list-->
 			<div class="col-md-6">
 				<div class="panel panel-default">
-		 			 <div class="panel-heading">กระทู้ถาม-ตอบของคุณ</div>
+		 			 <div class="panel-heading">ข่าวประกาศ</div>
 		 				<div class="panel-body">
                             <div class="list-group">
                                 <a href="#" class="list-group-item">
@@ -92,7 +93,7 @@
                                 </a>
                             </div>
                             <!-- /.list-group -->
-                            <a href="#" class="btn btn-default btn-block">View All Topic</a>
+                            <a href="/annoucement" class="btn btn-default btn-block">View All Topic</a>
                         </div>
 				</div>
 		    </div>

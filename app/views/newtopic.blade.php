@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
   	<div class="breadcrumb"><li><p style="font-size: 20px;">Create topic</li></div>
 	   <div class="col-md-8" style="margin-top:10px;">
 	     	<div class="well bs-component col-md-8" style="margin-left:100px;">

@@ -2,9 +2,15 @@
 class AnnouncementController extends BaseController
 {
 	public function getnewAnnoun()
-	{
-		//return View::make('recipe.newRecipe');
-		return View::make('Anooun.newAnnoun');
+	{		
+		$odj= new Announcement;
+	//	$odj->setId_topic(Input::get('id'));
+		$odj->setTopic(Input::get('topic'));
+		$odj->setDetail_An(Input::get('detail'));
+		$odj->setId_user(Auth::id());
+		$odj->newAnnoun();
+		return Redirect::to('/annoucement');
+		//return View::make('Anooun.newAnnoun');
 	}
 	
 	public function postnewAnnoun(){

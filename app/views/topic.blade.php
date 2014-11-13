@@ -1,6 +1,9 @@
 @extends('template')
 
 @section('content')
+
+
+
 <center><h1>Lab Checker Board</h1></center>
 <div style="margin-left:20px; margin-top:20px;" class="col-md-11 col-md-offset-2">
 

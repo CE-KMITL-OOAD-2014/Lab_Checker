@@ -2,6 +2,7 @@
 
 @section('content')
 
+
   	<div class="breadcrumb"><li><p style="font-size: 20px;">Create Subject</li></div>
   	<div class="alert alert-warning col-md-8" role="alert" style="margin-left:20px;">กรุณากรอกข้อมูลที่ต้องการแก้ไขค่ะ</div>
 

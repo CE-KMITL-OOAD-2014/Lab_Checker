@@ -1,6 +1,8 @@
 @extends('template')
 
 @section('content')
+
+
 <!--scriptShowhide-->
 
         <script>
@@ -32,7 +34,7 @@
                   <div class="form-group">
                     <label for="text" class="col-lg-2 control-label">Name</label>
                     <div class="col-lg-10">
-                      <input type="text" class="form-control" id="name" placeholder="name">
+                      <input type="text" class="form-control" id="name" placeholder="name" value="Blue">
                     </div>
                   </div>
 
@@ -41,35 +43,14 @@
                   <div class="form-group">
                     <label for="text" class="col-lg-2 control-label">Surname</label>
                     <div class="col-lg-10">
-                      <input type="text" class="form-control" id="surname" placeholder="surname" >
+                      <input type="text" class="form-control" id="surname" placeholder="surname"  value="Mumu">
                     </div>
                   </div>
                   
-                  <div class="form-group">
-                    <label for="inputPassword" class="col-lg-2 control-label">Old Password</label>
-                    <div class="col-lg-10">
-                      <input type="password" class="form-control" id="oldPassword" placeholder="Old Password">
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="inputPassword" class="col-lg-2 control-label">New Password</label>
-                    <div class="col-lg-10">
-                      <input type="password" class="form-control" id="oldPassword" placeholder="New Password">
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="inputPassword" class="col-lg-2 control-label">Confirm Password</label>
-                    <div class="col-lg-10">
-                      <input type="password" class="form-control" id="oldPassword" placeholder="Confirm Password">
-                    </div>
-                  </div>
-
                   <div class="form-group" action=" ">
                     <div class="col-lg-10 col-lg-offset-2">
                       <button type="submit" class="btn btn-primary">Submit</button>
-                      <button class="btn btn-default">Cancel</button>
+                      <button type="reset" class="btn btn-default">Reset</button>
                     </div>
                   </div>
                 </fieldset>

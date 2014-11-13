@@ -39,13 +39,19 @@ Route::post('/register','UserController@regisUser');
 
 Route::get('/subject/{id}','SubjectController@getshowsubject');
 
+Route::get('/subject/export/{id}','SubjectController@export');
+
 Route::get('/index','SubjectController@getallsubject');
+
+Route::post('/newAnnouncement','AnnouncementController@getnewAnnoun');
 
 Route::get('/editprofile', function() {
 	return View::make('usersetting');
 });
 
 //  Subject
+
+Route::get('/subject/check/{id}','SubjectController@check');
 
 Route::post('/newclass','SubjectController@addSubject');
 
@@ -89,4 +95,12 @@ Route::get('/newtopic', function() {
 
 Route::get('/topic', function() {
 	return View::make('topic');
+});
+
+Route::get('/annouce', function() {
+	return View::make('annouce');
+});
+
+Route::get('/profile', function() {
+	return View::make('profile');
 });

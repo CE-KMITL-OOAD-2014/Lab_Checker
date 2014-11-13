@@ -54,28 +54,46 @@
 			}	
 		}
 
-		public function getshowsubject($id)
-		{		$obj=new Subject;
-				$show=$obj->getFromId($id);
+		public function getshowsubject($id){
+			$obj=new Subject;
+			$show=$obj->getFromId($id);
 				
-			return View::make('showSubject')->with(array("id"=>$show->getId_subject(),"name_subject"=>$show->getName_subject(),"time_subject"=>$show->getTime_subject(),"day_subject"=>$show->getDay_subject(),"room_subject"=>$show->getRoom_subject(),"detail_subject"=>$show->getDetail_subject()));
+			return View::make('showSubject')->with(array("id"=>$show->getId_subject(),"name_subject"=>$show->getName_subject(),"time_subject"=>$show->getTime_subject(),"day_subject"=>$show->getDay_subject(),"room_subject"=>$show->getRoom_subject(),"permission"=>$show->getPermission(),"detail_subject"=>$show->getDetail_subject(),"path_file"=>$show->getPath_file()));
 		}
 
-		public function getallsubject()
-		{		$obj1=new Subject;
-				$subject=$obj1->getAll();
+		public function export($id){
+			$obj=new Subject;
+			$show=$obj->getFromId($id);
+			$file=$show->getPath_file();	
+			$path="./subjectfile/$file";
+			return Response::download($path);
+		}
+
+		public function getallsubject(){
+			$obj1=new Subject;
+			$subject=$obj1->getAll();
 			return View::make('index')->with("subject",$subject);
 		}
 
-		public function geteditsubject($id)
-		{		$obj=new Subject;
-				$subject=$obj->getFromId($id);
+		// public function export(){
+		// 	return Response::download($tmp_file,'path_file');
+		// }
 
-			return View::make('subject.subjecy')->with(array("name_subject"=>$show->getName_subject(),"time_subject"=>$show->getTime_subject(),
+		public function geteditsubject($id){
+			$obj=new Subject;
+			$subject=$obj->getFromId($id);
+
+			return View::make('subject.subject')->with(array("name_subject"=>$show->getName_subject(),"time_subject"=>$show->getTime_subject(),
 				"day_subject"=>$show->getDay_subject(),"room_subject"=>$show->getRoom_subject(),
 				"detail_subject"=>$show->getDetail_subject()));
 		}
-	
+
+		// public function getFile($id){
+		// 	$obj=new Subject;
+		// 	$show=$obj->getFromId($id);
+		// 	return View::make('check')->with(array("filename"=>$show->getPath_file()))
+		// }
+	 
 		public function find($id){
 			$datatmp = SubjectRepository::find($id);
 				if($datatmp==NULL){
@@ -117,7 +135,35 @@
 			}else {
 				return NULL;
 			}
+		}
 
+		public function check($id){
+			$obj=new Subject;
+			$show=$obj->getFromId($id);
+			$file=$show->getPath_file();	
+			$path="./subjectfile/$file";
+			$f = fopen($path, "r+");
+			$fr = fread($f,filesize($path));
+			fclose($f);
+			$line = array();
+			$line = explode("\n",$fr);
+			for ($i=2; $i<count($line);$i++) { 
+				$cells = array();
+				$cells = explode(",",$line[$i]);
+				for ($k=1; $k<count($cells);$k++) { 
+					if(Input::get($i.$k)==1){
+						$cells[$k] = Input::get($i.$k);
+					}else{
+						$cells[$k] = 0;
+					}
+				}
+				$line[$i] = implode(",",$cells);
+			}
+			$line = implode("\n",$line);
+			$fp=fopen($path,"w+");
+			fwrite($fp, $line);
+			fclose($fp);
+			return Redirect::to('/index');
 		}
 	
 		// public function destroy($id)
@@ -128,12 +174,6 @@
 		// 	$this->subjectsHelper->remove($id);
 
 		// 	return Redirect::to('/subject');
-		// }
-
-
-		// public function export($id){
-
-
 		// }
 
 

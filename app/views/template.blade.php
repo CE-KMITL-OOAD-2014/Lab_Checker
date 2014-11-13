@@ -1,15 +1,14 @@
 <html>
 <head>
-	<meta charset="utf-8">
+<meta charset="utf-8">
 	<title>:: Lab checker :: </title>
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-theme.css') }}">
-  <script src = "{{ asset('js/bootstrap.js') }}"></script>
-  <script src = "{{ asset('js/jquery.min.js') }}"></script>
-	<link href="{{ asset('css/simple-sidebar.css') }}" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-theme.css">
+  <script src = "/js/bootstrap.js"></script>
+  <script src = "/js/jquery.min.js"></script>
+	<link href="/css/simple-sidebar.css" rel="stylesheet">
 </head>
     <body>
-     
             <!--top bar-->
  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       	<div class="navbar-header">
@@ -63,10 +62,10 @@
         </div>
         <!-- /#sidebar-wrapper -->
        <!-- jQuery Version 1.11.0 -->
-    <script src="js/jquery-1.11.0.js"></script>
+    <script src="/js/jquery-1.11.0.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 
     <!-- Menu Toggle Script -->
     <script>
