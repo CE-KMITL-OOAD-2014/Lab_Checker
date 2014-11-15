@@ -40,8 +40,27 @@
     
   </div>
 
+  <?php
+   $status_prof = 0;
+    $check_permiss = 0;
+    if(Auth::id() == $id_user){
+      $status_prof = 1;
+    }else{
+          $cell = array(); 
+          $cell = explode(",",$permission);
+          for($i=0;$i<count($cell);$i++){
+             if(Auth::id()==$cell[$i]){
+                $check_permiss = 1;
+              }elseif($check_permiss == 0){
+                $check_permiss = 0;
+          }
+       }
+    }
+  ?>
 
+ @if($status_prof == 1)
   <div class="tab-pane" id="check">
+  
     <div stlye="margin-left:20px; margin-top:20px;">
          <div class="table-responsive margin-top:20px; col-md-12">
           <br>
@@ -89,17 +108,68 @@
     </div>
   </div>
 
-  <div class="tab-pane" id="export">
-    <br>
-   
-        <a type="button" href="/subject/export/{{$id}}" class="btn btn-primary">Export</a>
-     
 
+
+
+  <div class="tab-pane" id="export">
+    <br>  
+        <a type="button" href="/subject/export/{{$id}}" class="btn btn-primary">Export</a>
   </div>
-  <div class="tab-pane" id="report">...</div>
+ @endif
+
+ @if($check_permiss == 1)
+  <div class="tab-pane" id="report">
+  <div class="tab-pane" id="check">
+    <div stlye="margin-left:20px; margin-top:20px;">
+         <div class="table-responsive margin-top:20px; col-md-12">
+          <br>
+          <form  id="checkform" role="form" method="GET" action="/subject/check/{{$id}}" enctype="multipart/form-data">
+
+            <?php
+
+              $f = fopen("./subjectfile/".$path_file,"r+");
+              $fr = fread($f,filesize("./subjectfile/".$path_file));
+              fclose($f);
+              $lines = array();
+              $lines = explode("\n",$fr); // IMPORTANT the delimiter here just the "new line" \r\n, use what u need instead of... 
+             //echo "line:".count($lines);
+             echo "<table border='2' width='500px'>";
+              for($i=0;$i<count($lines)-1;$i++)
+              {
+                  echo "<tr>";
+                  $cells = array(); 
+                  $cells = explode(",",$lines[$i]); // use the cell/row delimiter what u need!
+                  for($k=0;$k<count($cells);$k++)
+                  {
+                    echo "<td><center>";
+                    if($k>0 && $i>1){
+                      echo '<input type="checkbox" name="'.$i.$k.'" value="1" ';
+                      if($cells[$k][0]!="0"){
+                        echo 'checked';
+                      }
+                      echo '>'.$cells[$k];
+                    }else{
+                      echo $cells[$k];
+                    }
+                    echo "</td></center>";
+                  }
+                  // for k end
+                  echo "</tr>";
+              }
+              echo "</table>";
+              // for i end
+              
+              ?>
+
+                  </form>
+      </div>
+    </div>
+  </div>
+</div>
+ @endif
   
 </div>
-			
+      
 </div>
 
 

@@ -9,32 +9,24 @@
 	
 
 		public function __construct(){
-	//		$this->id=NULL;
-			$this->topic=NULL;
-			$this->detail=NULL;
-			$this->time=NULL;
-			$this->id_user=NULL;
+
 		}
 
-	//	public function setId_topic($id){
-	//		$this->id=$id;
-	//	}
+
 		public function setTopic($topic){
 			$this->topic=$topic;
 		}
 		public function setDetail_An($detail){
 			$this->detail=$detail;
 		}
-		public function setTime_An($time){
-			$this->time=$time;
-		}
+
 		public function setId_user($id_user){
 			$this->id_user=$id_user;
 		}
 
-	//	public function getId_topic(){
-	//		return $this->id;
-	//	}
+		public function getId_topic(){
+			return $this->id;
+		}
 		public function getTopic(){
 			return $this->topic;
 		}
@@ -50,10 +42,8 @@
 
 		public function newAnnoun(){
 			$new=new AnnouncementRepository;
-		//	$new->id=$this->id;
 			$new->topic=$this->topic;
 			$new->detail=$this->detail;
-		//	$new->time=$this->time;
 			$new->id_user=$this->id_user;
 			$new->save();
 		}

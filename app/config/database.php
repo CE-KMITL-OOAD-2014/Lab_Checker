@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'lab_checker_db',
 			'username'  => 'root',
-			'password'  => 'web',
+			'password'  => 'orio&blue11',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

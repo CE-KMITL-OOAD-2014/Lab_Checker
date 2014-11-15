@@ -29,7 +29,7 @@
 	     	<div class="well bs-component col-md-8" style="margin-left:100px;">
           <!--edit-->
           <!---->
-              <form class="form-horizontal" id="editname" role="form" method="post">
+              <form class="form-horizontal" id="editname" role="form" method="post" action="{{url('/profile')}}">
                 <fieldset>
                   <div class="form-group">
                     <label for="text" class="col-lg-2 control-label">Name</label>

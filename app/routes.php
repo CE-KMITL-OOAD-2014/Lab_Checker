@@ -43,7 +43,7 @@ Route::get('/subject/export/{id}','SubjectController@export');
 
 Route::get('/index','SubjectController@getallsubject');
 
-Route::post('/newAnnouncement','AnnouncementController@getnewAnnoun');
+
 
 Route::get('/editprofile', function() {
 	return View::make('usersetting');
@@ -67,12 +67,19 @@ Route::get('/subject/newClass', function() {
 	return View::make('newclass');
 });
 
+//Announcement
+Route::get('/announcement','AnnouncementController@getallAnnounce');
+
+Route::post('/newAnnouncement','AnnouncementController@getnewAnnounce');
+
+Route::get('/announcement/{id}','AnnouncementController@getshowAnnounce');
+
+Route::post('/announcement/show/{id}/comment','CommentController@postComment');
+
 Route::get('/newClass', function() {
 	return View::make('newclass');
 });
-/*
-Route::post('/')
-*/
+
 Route::get('/editclass', function() {
 	return View::make('editSub');
 });
@@ -85,10 +92,6 @@ Route::get('/myClassStu', function() {
 	return View::make('myClassstudent');
 });
 
-Route::get('/annoucement', function() {
-	return View::make('annoucement');
-});
-
 Route::get('/newtopic', function() {
 	return View::make('newtopic');
 });
@@ -97,8 +100,8 @@ Route::get('/topic', function() {
 	return View::make('topic');
 });
 
-Route::get('/annouce', function() {
-	return View::make('annouce');
+Route::get('/announce', function() {
+	return View::make('announce');
 });
 
 Route::get('/profile', function() {

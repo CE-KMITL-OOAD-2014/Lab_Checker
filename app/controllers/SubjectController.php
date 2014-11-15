@@ -58,7 +58,16 @@
 			$obj=new Subject;
 			$show=$obj->getFromId($id);
 				
-			return View::make('showSubject')->with(array("id"=>$show->getId_subject(),"name_subject"=>$show->getName_subject(),"time_subject"=>$show->getTime_subject(),"day_subject"=>$show->getDay_subject(),"room_subject"=>$show->getRoom_subject(),"permission"=>$show->getPermission(),"detail_subject"=>$show->getDetail_subject(),"path_file"=>$show->getPath_file()));
+			return View::make('showSubject')->with(
+					array("id"=>$show->getId_subject(),
+						  "name_subject"=>$show->getName_subject(),
+						  "time_subject"=>$show->getTime_subject(),
+						  "day_subject"=>$show->getDay_subject(),
+						  "room_subject"=>$show->getRoom_subject(),
+						  "permission"=>$show->getPermission(),
+						  "id_user"=>$show->getId_user(),
+						  "detail_subject"=>$show->getDetail_subject(),
+						  "path_file"=>$show->getPath_file()));
 		}
 
 		public function export($id){

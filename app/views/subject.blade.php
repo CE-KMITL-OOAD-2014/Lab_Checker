@@ -1,8 +1,9 @@
 @extends('template')
 @section('content')
 
+@if (!Auth::guest()) 
 
-	
+
 	<!--table-->
 	<div class="col-md-8 col-md-offset-1" style="margin-top:20px;">
 		<div><a type="button" class="btn btn-success" href="/newClass" >New Class</a>
@@ -82,5 +83,5 @@
 								    </table>
 				 		</div>
 			</div>
-
+@endif
 @stop

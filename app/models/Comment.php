@@ -9,50 +9,38 @@
 	
 
 		public function __construct(){
-			$this->id=NULL;
-			$this->comment=NULL;
-			$this->time=NULL;
-			$this->id_user=NULL;
-			$this->id_topic=NULL;
+
 		}
 
-		public function setId_topic($value){
-			$this->id=$value;
-		}
 		public function setComment($value){
 			$this->comment=$value;
 		}
 		public function setId_user($value){
 			$this->id_user=$value;
 		}
-		public function setTime_Com($time){
-			$this->time=$time;
-		}
 		public function setId_topic($value){
 			$this->id_topic=$value;
 		}
 
-		public function getId_topic(){
+		public function getId_comment(){
 			return $this->id;
 		}
-		public function getTopic(){
+		public function getComment(){
 			return $this->comment;
 		}
 		public function getId_user(){
 			return $this->id_user;
 		}
 		public function getTime_Com(){
-			return $this->$time;
+			return $this->time;
 		}
-		public function getId_topic(){
+		public function getId_Topic(){
 			return $this->id_topic;
 		}
 
 		public function newComment(){
 			$new=new CommentRepository;
-			$new->id=$this->id;
 			$new->comment=$this->comment;
-			$new->time=$this->time;
 			$new->id_user=$this->id_user;
 			$new->id_topic=$this->id_topic;
 			$new->save();
@@ -71,18 +59,26 @@
 			$obj->id_topic=$datatmp->id_topic;
 			return $obj;
 		}
-/*
-		public function editAnnoun($id){
-			$edit=AnnouncementRepository::find($id);
-				if($edit==NULL){
-					return NULL;
-				}
-			$edit->comment=$this->comment;
-			$edit->id_user=$this->id_user;
-			$edit->id_topic=$this->id_topic;
-			$edit->save();
+
+	public static function getByAnnounce($id_topic){
+		$data=CommentRepository::where('id_topic','=',$id_topic)->get();
+		$size=count($data);
+		if($data==NULL){
+			return NULL;
 		}
-		*/
+		
+		$comment=array();
+		for($i=0;$i<$size;$i++){
+				$obj=new Comment;
+				$obj->id=$data[$i]->id;
+            	$obj->comment=$data[$i]->comment;
+            	$obj->time=$data[$i]->updated_at;
+            	$obj->id_user=$data[$i]->id_user;
+            	$obj->id_topic=$data[$i]->id_topic;
+            	$comment[$i]=$obj;
+		}
+		return $comment;
+	}
 
 		public static function getAll(){
             $data=CommentRepository::all();
@@ -91,8 +87,7 @@
             for($i=0;$i<$size;$i++){           
                 $obj=new Comment;
                 $obj->id=$data[$i]->id;
-                $obj->topic=$data[$i]->topic;
-                $obj->detail=$data[$i]->detail;
+                $obj->comment=$data[$i]->comment;
                 $obj->time=$data[$i]->time;
                 $obj->id_user=$data[$i]->id_user;
                 $comment[$i]=$obj;

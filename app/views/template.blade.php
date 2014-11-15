@@ -29,7 +29,7 @@
 		<li class="dropdown active">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"> {{Auth::id()}} <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="/usersetting">Edit Profile</a></li>
+            <li><a href="/profile">Edit Profile</a></li>
             <li><a href="/user/logout" >Log Out</a></li>
           </ul>
         </li>
@@ -43,7 +43,7 @@
 
  
 
-<!----left bar------>
+<!--left bar-->
      <div id="wrapper" style="padding-top:50px;">
 
         <!-- Sidebar -->
@@ -56,7 +56,7 @@
                     <a href="/class"><span class="glyphicon glyphicon-star"></span>  ชั้นเรียน</a>
                 </li>
                 <li>
-                    <a href="/annoucement"><span class="glyphicon glyphicon-bullhorn"></span>   บอร์ดถาม-ตอบ</a>
+                    <a href="/announcement"><span class="glyphicon glyphicon-bullhorn"></span>   บอร์ดถาม-ตอบ</a>
                 </li>
             </ul>
         </div>
